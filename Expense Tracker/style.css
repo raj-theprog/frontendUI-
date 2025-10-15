@@ -1,0 +1,271 @@
+/* ------Global Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  background-color: #f4f6f9;
+  transition: all 0.3s ease;
+}
+
+body.dark {
+  background-color: #222;
+  color: #f4f4f4;
+}
+
+/* ----Navbar */
+.navbar {
+  background-color: #2e86de;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar ul li a,
+.navbar ul li button {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.navbar ul li a:hover,
+.navbar ul li button:hover {
+  text-decoration: underline;
+}
+
+/* -----Container */
+.container {
+  width: 90%;
+  max-width: 800px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px 30px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+body.dark .container {
+  background-color: #333;
+  color: #f4f4f4;
+}
+
+/* -----Balance Section */
+.balance-section {
+  text-align: center;
+  background: #e8f0fe;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+body.dark .balance-section {
+  background: #444;
+  color: #f4f4f4;
+}
+
+/* ------ Summary Section */
+.summary-section {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.summary-box {
+  width: 48%;
+  text-align: center;
+  padding: 15px;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.income-box {
+  background: #d4edda;
+}
+
+body.dark .income-box {
+  background: #3a6b3a;
+  color: #fff;
+}
+
+.expense-box {
+  background: #f8d7da;
+}
+
+body.dark .expense-box {
+  background: #7a2a2a;
+  color: #fff;
+}
+
+/* -----Transaction List */
+.transaction-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.transaction-list li {
+  background: #f1f1f1;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.transaction-list li.income {
+  border-left: 5px solid #28a745;
+}
+
+.transaction-list li.expense {
+  border-left: 5px solid #dc3545;
+}
+
+body.dark .transaction-list li {
+  background: #444;
+  color: #f4f4f4;
+}
+
+/* Buttons */
+.delete-btn,
+.edit-btn {
+  border: none;
+  border-radius: 4px;
+  padding: 6px 10px;
+  cursor: pointer;
+  margin-left: 5px;
+  color: white;
+  font-weight: bold;
+}
+
+.delete-btn {
+  background: #dc3545;
+}
+
+.delete-btn:hover {
+  background: #b52a3a;
+}
+
+.edit-btn {
+  background: #28a745;
+}
+
+.edit-btn:hover {
+  background: #1b5a2c;
+}
+
+/* -----------Charts */
+.chart-section {
+  margin-top: 30px;
+  padding: 15px;
+  background: #f9fafc;
+  border-radius: 8px;
+
+}
+
+body.dark .chart-section {
+  background: #444;
+  color: #f4f4f4;
+}
+
+/* ------Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+}
+
+body.dark .modal-content {
+  background: #333;
+  color: #f4f4f4;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* ------Transaction Form */
+.transaction-form {
+  background: #f1f3f6;
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.transaction-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.transaction-form input,
+.transaction-form select {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: -5px;
+}
+
+#addTransactionBtn {
+  margin-top: 10px;
+  background: #2e86de;
+  color: white;
+  border: none;
+  padding: 12px;
+  width: 100%;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#addTransactionBtn:hover {
+  background: #1b5dbf;
+}
+

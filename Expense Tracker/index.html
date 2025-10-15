@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Expense Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="navbar">
+    <h2>💰 Expense Tracker</h2>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="form.html">Add Transaction</a></li>
+        <li><button id="toggleModeBtn">Toggle Dark/Light</button></li>
+    </ul>
+</nav>
+
+<div class="container">
+    <section class="balance-section">
+        <h2>Current Balance</h2>
+        <h3 id="balance">₹0</h3>
+    </section>
+
+    <section class="summary-section">
+        <div class="summary-box income-box">
+            <h3>Income</h3>
+            <p id="income">₹0</p>
+        </div>
+        <div class="summary-box expense-box">
+            <h3>Expenses</h3>
+            <p id="expense">₹0</p>
+        </div>
+    </section>
+
+    <section class="transaction-list">
+        <h2>Transaction History</h2>
+        <ul id="transactions"></ul>
+    </section>
+
+    <section class="chart-section">
+        <h2>Expense Breakdown (Pie Chart)</h2>
+        <canvas id="pieChart"></canvas>
+    </section>
+
+    <section class="chart-section">
+        <h2>Income vs Expenses by Category (Bar Chart)</h2>
+        <canvas id="barChart"></canvas>
+    </section>
+</div>
+
+<!-- Edit Modal -->
+<div id="editModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" id="closeModal">&times;</span>
+        <h2>Edit Transaction</h2>
+        <form id="editForm">
+            <label>Title:</label>
+            <input type="text" id="editTitle" required>
+            <label>Amount:</label>
+            <input type="number" id="editAmount" required>
+            <label>Date:</label>
+            <input type="date" id="editDate" required>
+            <label>Category:</label>
+            <select id="editCategory">
+                <option value="Food">Food</option>
+                <option value="Transport">Transport</option>
+                <option value="Bills">Bills</option>
+                <option value="Salary">Salary</option>
+                <option value="Shopping">Shopping</option>
+                <option value="Other">Other</option>
+            </select>
+            <label>Payment Method:</label>
+            <select id="editPaymentMethod">
+                <option value="Cash">Cash</option>
+                <option value="Credit Card">Credit Card</option>
+                <option value="Debit Card">Debit Card</option>
+                <option value="UPI">UPI</option>
+                <option value="Bank Transfer">Bank Transfer</option>
+            </select>
+            <label>Notes:</label>
+            <input type="text" id="editNotes" placeholder="Optional">
+            <div class="checkbox-container">
+                <input type="checkbox" id="editRecurring">
+                <label for="editRecurring">Recurring Transaction</label>
+            </div>
+            <label>Type:</label>
+            <select id="editType">
+                <option value="income">Income</option>
+                <option value="expense">Expense</option>
+            </select>
+            <button type="submit">Update Transaction</button>
+        </form>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
